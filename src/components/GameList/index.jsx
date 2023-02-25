@@ -1,22 +1,19 @@
 import "./gamelist.scss";
 
-export default function GameList() {
+export default function GameList({ game }) {
   return (
     <li className="game-list">
       <div className="game-card">
         <div className="game-card-img">
-          <img
-            src="https://www.freetogame.com/g/458/thumbnail.jpg"
-            alt="game-image"
-          />
+          <img src={game.thumbnail} alt="game-image" />
         </div>
         <div className="game-card-body">
           <div className="body-genre">
-            <span>MMORPG</span>
-            <span>platform</span>
+            <span>{game.genre}</span>
+            <span>{game.platform}</span>
           </div>
           <div className="body-title">
-            <p>League of Angels - Heaven's Fury</p>
+            <p>{game.title}</p>
           </div>
         </div>
       </div>
