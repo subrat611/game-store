@@ -1,0 +1,52 @@
+@use "../../scss/fonts" as *;
+
+.game-list {
+  width: 300px;
+  cursor: pointer;
+
+  &:hover {
+    .game-card-img {
+      & > img {
+        transform: scale(1.1);
+        filter: brightness(0.85);
+      }
+    }
+  }
+
+  .game-card {
+    .game-card-img {
+      height: 200px;
+      overflow: hidden;
+      border-radius: 4px;
+
+      & > img {
+        object-fit: cover;
+        object-position: right center;
+        height: 100%;
+        width: 100%;
+        transition: all 1.5s ease-out;
+      }
+    }
+
+    .game-card-body {
+      color: #fdfdfd;
+      font-family: $font-montserrat;
+      font-weight: $fw-medium;
+
+      .body-genre {
+        margin: 1rem 0 0.5rem 0;
+        display: flex;
+        justify-content: space-between;
+
+        & span:first-child {
+          color: #fdfdfdb4;
+        }
+      }
+
+      .body-title {
+        margin: 1rem 0 0.5rem 0;
+        font-size: 1.1rem;
+      }
+    }
+  }
+}

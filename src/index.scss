@@ -1,30 +1,36 @@
 html {
-    box-sizing: border-box;
-    font-size: 1rem;
+  box-sizing: border-box;
+  font-size: 1rem;
 }
 
 *,
 ::before,
 ::after {
-    box-sizing: inherit;
+  box-sizing: inherit;
 }
 
 body {
-    margin: 0;
-    padding: 0;
+  margin: 0;
+  padding: 0;
 }
 
 a {
-    text-decoration: none;
+  text-decoration: none;
 }
 
 li {
-    list-style: none;
+  list-style: none;
 }
 
 .App {
-    position: relative;
-    background-color: #000814;
-    max-height: 100%;
-    min-height: 100vh;
+  position: relative;
+  background-color: #000814;
+  max-height: 100%;
+  min-height: 100vh;
+}
+
+.game-lists-wrapper {
+  display: flex;
+  justify-content: space-evenly;
+  margin: 5rem 0;
 }
