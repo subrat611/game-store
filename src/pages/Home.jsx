@@ -50,6 +50,10 @@ export default function Home() {
 
         {searchGames.length > 0 &&
           searchGames.map((game) => <GameList game={game} key={game.id} />)}
+
+        {games.length <= 0 && searchGames.length <= 0 && (
+          <p className="game-list-loader">Loading...</p>
+        )}
       </ul>
     </div>
   );
