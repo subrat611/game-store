@@ -45,21 +45,23 @@ li {
   background-color: #000814;
   max-height: 100%;
   min-height: 100vh;
-}
 
-.game-lists-wrapper {
-  display: flex;
-  gap: 4rem 4rem;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-  margin: 0;
-  padding: 5rem 0;
+  .home-page-wrapper {
+    .game-lists-wrapper {
+      display: flex;
+      gap: 4rem 4rem;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      margin: 0;
+      padding: 5rem 0;
 
-  .game-list-loader {
-    color: #dfdfdf;
-    font-size: 1.4rem;
-    font-family: $font-montserrat;
-    font-weight: $fw-semibold;
+      .game-list-loader {
+        color: #dfdfdf;
+        font-size: 1.4rem;
+        font-family: $font-montserrat;
+        font-weight: $fw-semibold;
+      }
+    }
   }
 }

@@ -1,49 +1,74 @@
 @use "../../scss/fonts" as *;
 
 .navbar-wrapper {
-    background-color: #051923;
-    max-width: 100%;
-    min-width: max-content;
+  background-color: #051923;
+  max-width: 100%;
+  min-width: max-content;
 
-    .container {
-        width: 1444px;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        color: #fdfdff;
-        margin: 0 auto;
+  .container {
+    max-width: 1444px;
+    min-width: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: #fdfdff;
+    margin: 0 auto;
 
-        .logo {
-            font-family: $font-logo;
-            font-size: 1.5rem;
-            letter-spacing: 0.1em;
-            cursor: pointer;
-        }
-
-        .nav-lists {
-            display: flex;
-            align-items: center;
-            
-            .nav-cart-icon {
-                fill: #fdfdff;
-                height: 35px;
-            }
-
-            .nav-list {
-                font-family: $font-montserrat;
-                font-weight: $fw-medium;
-                letter-spacing: 0.03em;
-                margin: 0 1rem;
-                cursor: pointer;
-                text-transform: uppercase;
-
-            
-                &.btn-signup {
-                    padding: 0.5rem 0.8rem;
-                    background-color: #3772ff;
-                    font-weight: $fw-semibold;
-                }
-            }
-        }
+    .logo {
+      font-family: $font-logo;
+      font-size: 1.5rem;
+      letter-spacing: 0.1em;
+      cursor: pointer;
     }
+
+    .nav-lists {
+      display: flex;
+      align-items: center;
+
+      .nav-cart-icon {
+        fill: #fdfdff;
+        height: 35px;
+      }
+
+      .nav-list {
+        font-family: $font-montserrat;
+        font-weight: $fw-medium;
+        letter-spacing: 0.03em;
+        margin: 0 1rem;
+        cursor: pointer;
+        text-transform: uppercase;
+
+        &.btn-signup {
+          padding: 0.5rem 0.8rem;
+          background-color: #3772ff;
+          font-weight: $fw-semibold;
+        }
+      }
+    }
+
+    .hambar-menu {
+      display: none;
+    }
+  }
+}
+
+@media all and (max-width: 774px) {
+  .navbar-wrapper {
+    .container {
+      width: 100vw;
+      padding: 0.5rem 1rem;
+
+      .nav-lists {
+        display: none;
+      }
+
+      .hambar-menu {
+        display: block;
+
+        .mob-nav-menu-icon {
+          fill: #fdfdff;
+        }
+      }
+    }
+  }
 }
