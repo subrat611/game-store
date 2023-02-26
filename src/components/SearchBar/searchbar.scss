@@ -1,22 +1,22 @@
 @use "../../scss/fonts" as *;
 
-
 .search-bar-wrapper {
-    margin-top: 5rem;
-    display: flex;
-    justify-content: center;
+  margin-top: 5rem;
+  display: flex;
+  justify-content: center;
 
-    .search-input {
-        background: none;
-        outline: none;
-        border: 1px solid #fdfdfd;
-        border-radius: 3px;
-        width: 50%;
-        min-width: 270px;
-        font-size: $font-montserrat;
-        font-weight: $fw-medium;
-        font-size: 1.3rem;
-        padding: 1rem 1.5rem;
-        color: #fdfdfd;
-    }
+  .search-input {
+    background: none;
+    outline: none;
+    border: 1px solid #fdfdfd;
+    border-radius: 3px;
+    width: 50%;
+    min-width: 270px;
+    font-size: $font-montserrat;
+    font-weight: $fw-medium;
+    font-size: 1.2rem;
+    padding: 1rem 1.5rem;
+    color: #fdfdfd;
+    letter-spacing: 0.1em;
+  }
 }
