@@ -11,7 +11,7 @@ export default function SearchBar({ searchForGames }) {
         placeholder="search here..."
         type="text"
         className="search-input"
-        onChange={(e) => handleSearchText(e.target.value)}
+        onChange={(e) => handleSearchText(e.target.value.toLowerCase())}
       />
     </div>
   );
