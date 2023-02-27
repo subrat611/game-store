@@ -109,6 +109,7 @@
         .mob-nav-lists {
           &.show {
             top: 70%;
+            z-index: 1000;
           }
         }
       }

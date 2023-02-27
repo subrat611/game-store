@@ -16,7 +16,7 @@ export default function NavBar() {
     <div>
       <div className="navbar-wrapper">
         <div className="container">
-          <Link to="/">
+          <Link to="/" onClick={toggleMenu}>
             <span className="logo">Game Store</span>
           </Link>
           <ul className="nav-lists">
@@ -25,10 +25,10 @@ export default function NavBar() {
                 <CartIcon className="nav-cart-icon" />
               </li>
             </Link>
-            <Link to="/signin">
+            <Link to="/sign-in">
               <li className="nav-list">sign in</li>
             </Link>
-            <Link to="/signup">
+            <Link to="/sign-up">
               <li className="nav-list btn-signup">sign up</li>
             </Link>
           </ul>
@@ -40,10 +40,10 @@ export default function NavBar() {
                   <CartIcon className="nav-cart-icon" />
                 </li>
               </Link>
-              <Link to="/signin" onClick={toggleMenu}>
+              <Link to="/sign-in" onClick={toggleMenu}>
                 <li className="mob-nav-list">sign in</li>
               </Link>
-              <Link to="/signup" onClick={toggleMenu}>
+              <Link to="/sign-up" onClick={toggleMenu}>
                 <li className="mob-nav-list btn-signup">sign up</li>
               </Link>
             </ul>
