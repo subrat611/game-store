@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Outlet } from "react-router-dom";
+import { Link, Outlet } from "react-router-dom";
 import { ReactComponent as CartIcon } from "../../assets/cart.svg";
 import { ReactComponent as MenuIcon } from "../../assets/menu-icon.svg";
 
@@ -16,22 +16,36 @@ export default function NavBar() {
     <div>
       <div className="navbar-wrapper">
         <div className="container">
-          <span className="logo">Game Store</span>
+          <Link to="/">
+            <span className="logo">Game Store</span>
+          </Link>
           <ul className="nav-lists">
-            <li className="nav-list">
-              <CartIcon className="nav-cart-icon" />
-            </li>
-            <li className="nav-list">sign in</li>
-            <li className="nav-list btn-signup">sign up</li>
+            <Link to="/cart">
+              <li className="nav-list">
+                <CartIcon className="nav-cart-icon" />
+              </li>
+            </Link>
+            <Link to="/signin">
+              <li className="nav-list">sign in</li>
+            </Link>
+            <Link to="/signup">
+              <li className="nav-list btn-signup">sign up</li>
+            </Link>
           </ul>
           <div className="hambar-menu">
             <MenuIcon className="mob-nav-menu-icon" onClick={toggleMenu} />
             <ul className={toggleNav ? "mob-nav-lists show" : "mob-nav-lists"}>
-              <li className="mob-nav-list">
-                <CartIcon className="nav-cart-icon" />
-              </li>
-              <li className="mob-nav-list">sign in</li>
-              <li className="mob-nav-list btn-signup">sign up</li>
+              <Link to="/cart" onClick={toggleMenu}>
+                <li className="mob-nav-list">
+                  <CartIcon className="nav-cart-icon" />
+                </li>
+              </Link>
+              <Link to="/signin" onClick={toggleMenu}>
+                <li className="mob-nav-list">sign in</li>
+              </Link>
+              <Link to="/signup" onClick={toggleMenu}>
+                <li className="mob-nav-list btn-signup">sign up</li>
+              </Link>
             </ul>
           </div>
         </div>

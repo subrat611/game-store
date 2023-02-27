@@ -20,6 +20,7 @@
       font-size: 1.5rem;
       letter-spacing: 0.1em;
       cursor: pointer;
+      color: #fdfdff;
     }
 
     .nav-lists {
@@ -38,6 +39,7 @@
         margin: 0 1rem;
         cursor: pointer;
         text-transform: uppercase;
+        color: #fdfdff;
 
         &.btn-signup {
           padding: 0.5rem 0.8rem;
@@ -69,6 +71,7 @@
         transition: all 500ms ease-in-out;
 
         .mob-nav-list {
+          color: #fdfdff;
           svg {
             fill: #fdfdff;
             height: 32px;
@@ -104,9 +107,9 @@
         }
 
         .mob-nav-lists {
-            &.show {
-                top: 70%;
-            }
+          &.show {
+            top: 70%;
+          }
         }
       }
     }
