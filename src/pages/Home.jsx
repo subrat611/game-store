@@ -15,7 +15,7 @@ export default function Home() {
     const options = {
       method: "GET",
       headers: {
-        "X-RapidAPI-Key": "73bde6a55amsh023835711d23438p138d37jsnfec285384beb",
+        "X-RapidAPI-Key": import.meta.env.VITE_RAPID_API_KEY,
         "X-RapidAPI-Host": "free-to-play-games-database.p.rapidapi.com",
       },
     };
