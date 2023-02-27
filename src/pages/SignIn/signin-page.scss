@@ -71,8 +71,8 @@
     }
 
     .sign-in-btn {
-      outline: none;
-      border: none;
+      all: unset;
+      text-align: center;
       margin-top: 1rem;
       padding: 0.7rem 0;
       background-color: #3772ff;
