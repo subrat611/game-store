@@ -7,7 +7,7 @@
 
 ![Screenshot from 2023-02-28 11-36-54](https://user-images.githubusercontent.com/77252075/221768934-b6c80478-0aba-4d85-a401-4303c274b3ed.png)
 
-![image](https://user-images.githubusercontent.com/77252075/221769272-ffc0da81-e591-47e7-9a83-4647dfce9674.png)
+![Screenshot from 2023-02-28 11-41-58](https://user-images.githubusercontent.com/77252075/221769491-594615b8-e275-45e4-b379-f81b5e5ea7be.png)
 
 ## Table of contents
 
