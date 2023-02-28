@@ -1,6 +1,9 @@
 import { useState } from "react";
 
-import { createUserWithEmail } from "../../utils/firebase/firebase";
+import {
+  createUserWithEmail,
+  signInUserWithEmail,
+} from "../../utils/firebase/firebase";
 
 import BgImg from "../../assets/desktop-hd-wallpaper.jpg";
 
@@ -28,14 +31,15 @@ export default function SignIn() {
     e.preventDefault();
 
     try {
-      const res = await createUserWithEmail(
+      const { user } = await signInUserWithEmail(
         formFields.emailId,
         formFields.passwd
       );
+
       resetFields();
-      console.log(res);
+      console.log(user);
     } catch (err) {
-      console.log("user err: ", err);
+      console.log(`sign in err: ${err}`);
     }
   };
 

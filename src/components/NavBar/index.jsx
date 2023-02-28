@@ -16,7 +16,7 @@ export default function NavBar() {
     <div>
       <div className="navbar-wrapper">
         <div className="container">
-          <Link to="/" onClick={toggleMenu}>
+          <Link to="/" onClick={() => (toggleNav ? toggleMenu() : null)}>
             <span className="logo">Game Store</span>
           </Link>
           <ul className="nav-lists">
