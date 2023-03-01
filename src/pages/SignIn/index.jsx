@@ -1,9 +1,8 @@
-import { useState } from "react";
+import { useState, useContext } from "react";
 
-import {
-  createUserWithEmail,
-  signInUserWithEmail,
-} from "../../utils/firebase/firebase";
+import { signInUserWithEmail } from "../../utils/firebase/firebase";
+
+import { UserContext } from "../../context/User";
 
 import BgImg from "../../assets/desktop-hd-wallpaper.jpg";
 
@@ -14,6 +13,8 @@ export default function SignIn() {
     emailId: "",
     passwd: "",
   });
+
+  const { setCurrentUser } = useContext(UserContext);
 
   const handleFormField = (e) => {
     const { name, value } = e.target;
@@ -37,7 +38,7 @@ export default function SignIn() {
       );
 
       resetFields();
-      console.log(user);
+      setCurrentUser(user);
     } catch (err) {
       switch (err.code) {
         case "auth/user-not-found":

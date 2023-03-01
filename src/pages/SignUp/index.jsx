@@ -1,9 +1,12 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 
-import "./signup.scss";
+import { UserContext } from "../../context/User";
+
+import { createUserWithEmail } from "../../utils/firebase/firebase";
 
 import BgImg from "../../assets/desktop-hd-wallpaper.jpg";
-import { createUserWithEmail } from "../../utils/firebase/firebase";
+
+import "./signup.scss";
 
 const formFiledData = {
   displayName: "",
@@ -14,6 +17,8 @@ const formFiledData = {
 
 export default function SignUp() {
   const [formFields, setFormFields] = useState(formFiledData);
+
+  const { setCurrentUser } = useContext(UserContext);
 
   const handleFormField = (e) => {
     const { name, value } = e.target;
@@ -43,7 +48,7 @@ export default function SignUp() {
         formFields.password
       );
       resetFields();
-      console.log(user);
+      setCurrentUser(user);
     } catch (err) {
       console.log(`sign up error: ${err}`);
     }

@@ -3,6 +3,7 @@ import {
   getAuth,
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
+  signOut,
 } from "firebase/auth";
 
 const {
@@ -41,3 +42,6 @@ export const signInUserWithEmail = async (email, password) => {
 
   return await signInWithEmailAndPassword(auth, email, password);
 };
+
+// sign out method
+export const signOutUser = async () => signOut(auth);

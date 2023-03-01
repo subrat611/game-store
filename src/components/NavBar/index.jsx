@@ -1,5 +1,10 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { Link, Outlet } from "react-router-dom";
+
+import { UserContext } from "../../context/User";
+
+import { signOutUser } from "../../utils/firebase/firebase";
+
 import { ReactComponent as CartIcon } from "../../assets/cart.svg";
 import { ReactComponent as MenuIcon } from "../../assets/menu-icon.svg";
 
@@ -7,6 +12,13 @@ import "./navbar.scss";
 
 export default function NavBar() {
   const [toggleNav, setToggleNav] = useState(false);
+
+  const { currentUser, setCurrentUser } = useContext(UserContext);
+
+  const signOutHandler = async () => {
+    await signOutUser();
+    setCurrentUser(null);
+  };
 
   function toggleMenu() {
     setToggleNav((prev) => !prev);
@@ -25,12 +37,21 @@ export default function NavBar() {
                 <CartIcon className="nav-cart-icon" />
               </li>
             </Link>
-            <Link to="/sign-in">
-              <li className="nav-list">sign in</li>
-            </Link>
-            <Link to="/sign-up">
-              <li className="nav-list btn-signup">sign up</li>
-            </Link>
+            {currentUser && (
+              <li className="nav-list sign-out" onClick={signOutHandler}>
+                sign out
+              </li>
+            )}
+            {!currentUser && (
+              <Link to="/sign-in">
+                <li className="nav-list">sign in</li>
+              </Link>
+            )}
+            {!currentUser && (
+              <Link to="/sign-up">
+                <li className="nav-list btn-signup">sign up</li>
+              </Link>
+            )}
           </ul>
           <div className="hambar-menu">
             <MenuIcon className="mob-nav-menu-icon" onClick={toggleMenu} />
