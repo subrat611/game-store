@@ -32,17 +32,18 @@ export default function SignUp() {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
+    if (formFields.password !== formFields.confirmPassword) {
+      alert("Password does not match");
+      return;
+    }
+
     try {
-      if (formFields.password === formFields.confirmPassword) {
-        const { user } = await createUserWithEmail(
-          formFields.emailId,
-          formFields.password
-        );
-        resetFields();
-        console.log(user);
-      } else {
-        console.log("password does not match");
-      }
+      const { user } = await createUserWithEmail(
+        formFields.emailId,
+        formFields.password
+      );
+      resetFields();
+      console.log(user);
     } catch (err) {
       console.log(`sign up error: ${err}`);
     }

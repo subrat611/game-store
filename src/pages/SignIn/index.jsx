@@ -39,7 +39,18 @@ export default function SignIn() {
       resetFields();
       console.log(user);
     } catch (err) {
-      console.log(`sign in err: ${err}`);
+      switch (err.code) {
+        case "auth/user-not-found":
+          alert("user not found");
+          break;
+
+        case "auth/wrong-password":
+          alert("password does not match");
+          break;
+
+        default:
+          console.log(`unknown error try again: ${err}`);
+      }
     }
   };
 
