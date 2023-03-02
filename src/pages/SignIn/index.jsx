@@ -2,7 +2,7 @@ import { useState, useContext } from "react";
 
 import { signInUserWithEmail } from "../../utils/firebase/firebase";
 
-import { UserContext } from "../../context/User";
+// import { UserContext } from "../../context/User";
 
 import BgImg from "../../assets/desktop-hd-wallpaper.jpg";
 
@@ -14,7 +14,7 @@ export default function SignIn() {
     passwd: "",
   });
 
-  const { setCurrentUser } = useContext(UserContext);
+  // const { setCurrentUser } = useContext(UserContext);
 
   const handleFormField = (e) => {
     const { name, value } = e.target;
@@ -38,7 +38,7 @@ export default function SignIn() {
       );
 
       resetFields();
-      setCurrentUser(user);
+      // setCurrentUser(user); no longer need because of observer
     } catch (err) {
       switch (err.code) {
         case "auth/user-not-found":

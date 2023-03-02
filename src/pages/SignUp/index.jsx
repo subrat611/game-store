@@ -1,6 +1,6 @@
 import { useContext, useState } from "react";
 
-import { UserContext } from "../../context/User";
+// import { UserContext } from "../../context/User";
 
 import { createUserWithEmail } from "../../utils/firebase/firebase";
 
@@ -18,7 +18,7 @@ const formFiledData = {
 export default function SignUp() {
   const [formFields, setFormFields] = useState(formFiledData);
 
-  const { setCurrentUser } = useContext(UserContext);
+  // const { setCurrentUser } = useContext(UserContext);
 
   const handleFormField = (e) => {
     const { name, value } = e.target;
@@ -48,7 +48,7 @@ export default function SignUp() {
         formFields.password
       );
       resetFields();
-      setCurrentUser(user);
+      // setCurrentUser(user); no longer need because of observer
     } catch (err) {
       console.log(`sign up error: ${err}`);
     }

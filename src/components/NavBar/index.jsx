@@ -13,11 +13,11 @@ import "./navbar.scss";
 export default function NavBar() {
   const [toggleNav, setToggleNav] = useState(false);
 
-  const { currentUser, setCurrentUser } = useContext(UserContext);
+  const { currentUser } = useContext(UserContext);
 
   const signOutHandler = async () => {
     await signOutUser();
-    setCurrentUser(null);
+    // setCurrentUser(null); no longer need because of observer
   };
 
   function toggleMenu() {
