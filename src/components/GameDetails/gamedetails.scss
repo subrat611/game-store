@@ -1,0 +1,83 @@
+@use "../../scss/fonts" as *;
+
+.game-details-wrapper {
+  position: relative;
+  background-color: #000814;
+  overflow-x: hidden;
+  height: 90vh;
+
+  &::-webkit-scrollbar {
+    width: 0;
+  }
+
+  .game-details-bg {
+    position: relative;
+    height: 70vh;
+
+    img {
+      height: 100%;
+      width: 100%;
+      background-size: cover;
+      filter: blur(0.1rem) brightness(0.45);
+    }
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 30px;
+      width: 100%;
+      background-image: linear-gradient(
+        110.3deg,
+        rgb(46, 46, 46) 4.3%,
+        rgb(21, 21, 22) 96.7%
+      );
+      filter: blur(20px);
+      z-index: 1;
+    }
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: -5%;
+      left: 0;
+      height: 50px;
+      width: 100%;
+      background: #000814;
+      filter: blur(20px);
+      z-index: 1;
+    }
+  }
+
+  .details-wrapper {
+    z-index: 2;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    color: #ffffff;
+    padding: 3rem 0;
+
+    .details-container {
+      flex-basis: 50%;
+      margin: 0;
+      padding: 0;
+
+      p {
+        margin: 0;
+        padding: 0;
+      }
+    }
+
+    .details-price-container {
+      position: sticky;
+      top: 10%;
+      flex-basis: 20%;
+      background: #0a0a0a93;
+      height: 50vh;
+      border-radius: 7px;
+      padding: 1.5rem 1rem;
+    }
+  }
+}
