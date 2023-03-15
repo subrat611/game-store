@@ -47,7 +47,18 @@ export default function GameDetails() {
   );
 }
 
-function GameDetailsData({ title, thumbnail, desc, sysReq }) {
+function GameDetailsData({
+  title,
+  thumbnail,
+  desc,
+  sysReq,
+  gameUrl,
+  genre,
+  platform,
+  publisher,
+  developer,
+  releaseDate,
+}) {
   return (
     <div className="game-details-wrapper">
       <div className="game-details-bg">
@@ -86,7 +97,33 @@ function GameDetailsData({ title, thumbnail, desc, sysReq }) {
           </div>
         </div>
         <div className="details-price-container">
-          <h1>Title</h1>
+          <h2>Game Information</h2>
+          <ul className="info-wrapper">
+            <li className="info-list">
+              <p className="info">
+                Game URL:{" "}
+                <a href={gameUrl} target="_blank">
+                  {gameUrl}
+                </a>
+              </p>
+            </li>
+            <li className="info-list">
+              <p className="info">Genre: {genre}</p>
+            </li>
+            <li className="info-list">
+              <p className="info">Platform: {platform}</p>
+            </li>
+            <li className="info-list">
+              <p className="info">Publisher: {publisher}</p>
+            </li>
+            <li className="info-list">
+              <p className="info">Developer: {developer}</p>
+            </li>
+            <li className="info-list">
+              <p className="info">Release Date: {releaseDate}</p>
+            </li>
+          </ul>
+          <button className="add-to-cart-btn">Add To Cart</button>
         </div>
       </div>
     </div>
