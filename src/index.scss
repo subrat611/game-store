@@ -40,6 +40,14 @@ li {
   list-style: none;
 }
 
+.loader {
+  color: #ffffff;
+  text-align: center;
+  font-family: $font-montserrat;
+  font-weight: $fw-semibold;
+  margin-top: 3rem;
+}
+
 .App {
   position: relative;
   background-color: #000814;
