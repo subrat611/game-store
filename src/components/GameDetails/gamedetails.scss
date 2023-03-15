@@ -104,9 +104,37 @@
       top: 10%;
       flex-basis: 20%;
       background: #0a0a0abd;
-      height: 50vh;
+      height: 100%;
       border-radius: 1rem;
       padding: 1.5rem 1rem;
+      font-family: $font-montserrat;
+
+      .info-wrapper {
+        padding: 0;
+        .info-list {
+          .info {
+            font-weight: $fw-medium;
+            line-height: 1.2em;
+          }
+        }
+      }
+
+      .add-to-cart-btn {
+        all: unset;
+        text-align: center;
+        margin-top: 1rem;
+        padding: 0.7rem 1rem;
+        background-color: #3772ff;
+        font-family: $font-montserrat;
+        font-weight: $fw-medium;
+        font-size: 1rem;
+        color: #fdfdfd;
+        cursor: pointer;
+
+        &:hover {
+          background-color: #3773ffe3;
+        }
+      }
     }
   }
 }
