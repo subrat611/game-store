@@ -36,7 +36,10 @@ export default function GameDetails() {
       gameUrl={gameDetails.game_url}
       genre={gameDetails.genre}
       platform={gameDetails.platform}
-      systemRequirement={gameDetails.minimum_system_requirements}
+      publisher={gameDetails.publisher}
+      developer={gameDetails.developer}
+      releaseDate={gameDetails.release_date}
+      sysReq={gameDetails.minimum_system_requirements}
       screenshots={gameDetails.screenshots}
     />
   ) : (
@@ -44,7 +47,7 @@ export default function GameDetails() {
   );
 }
 
-function GameDetailsData({ title, thumbnail, desc }) {
+function GameDetailsData({ title, thumbnail, desc, sysReq }) {
   return (
     <div className="game-details-wrapper">
       <div className="game-details-bg">
@@ -52,8 +55,35 @@ function GameDetailsData({ title, thumbnail, desc }) {
       </div>
       <div className="details-wrapper">
         <div className="details-container">
-          <h1>{title}</h1>
-          <p>{desc}</p>
+          <h1 className="details-title">{title}</h1>
+          <div className="carousel-wrapper">{/* carousel */}</div>
+          <div className="details-desc">
+            <p className="long-desc">{desc}</p>
+            {sysReq && (
+              <div>
+                <h2>Minimum System Requirements</h2>
+                <ul className="requirements-wrapper">
+                  <li className="requirement-list">
+                    <p className="requirement">OS : {sysReq.os}</p>
+                  </li>
+                  <li className="requirement-list">
+                    <p className="requirement">
+                      Processor : {sysReq.processor}
+                    </p>
+                  </li>
+                  <li className="requirement-list">
+                    <p className="requirement">Memory : {sysReq.memory}</p>
+                  </li>
+                  <li className="requirement-list">
+                    <p className="requirement">Graphics : {sysReq.graphics}</p>
+                  </li>
+                  <li className="requirement-list">
+                    <p className="requirement">Storage : {sysReq.storage}</p>
+                  </li>
+                </ul>
+              </div>
+            )}
+          </div>
         </div>
         <div className="details-price-container">
           <h1>Title</h1>
