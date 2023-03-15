@@ -63,10 +63,39 @@
       flex-basis: 50%;
       margin: 0;
       padding: 0;
+      font-family: $font-montserrat;
 
-      p {
-        margin: 0;
-        padding: 0;
+      .details-title {
+        letter-spacing: 0.04em;
+        text-transform: uppercase;
+      }
+
+      .carousel-wrapper {
+        height: 500px;
+        margin: 2rem 1rem;
+        background-color: #000814;
+      }
+
+      .details-desc {
+        background: #00081480;
+        margin: 0 1rem 0 0;
+        padding: 1rem 1.5rem;
+        border-radius: 1rem;
+
+        .long-desc {
+          line-height: 1.5em;
+          font-size: 1.03rem;
+          font-weight: $fw-regular;
+        }
+
+        .requirements-wrapper {
+          padding: 0;
+          .requirement-list {
+            .requirement {
+              font-weight: $fw-medium;
+            }
+          }
+        }
       }
     }
 
@@ -74,9 +103,9 @@
       position: sticky;
       top: 10%;
       flex-basis: 20%;
-      background: #0a0a0a93;
+      background: #0a0a0abd;
       height: 50vh;
-      border-radius: 7px;
+      border-radius: 1rem;
       padding: 1.5rem 1rem;
     }
   }
