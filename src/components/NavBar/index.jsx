@@ -61,12 +61,21 @@ export default function NavBar() {
                   <CartIcon className="nav-cart-icon" />
                 </li>
               </Link>
-              <Link to="/sign-in" onClick={toggleMenu}>
-                <li className="mob-nav-list">sign in</li>
-              </Link>
-              <Link to="/sign-up" onClick={toggleMenu}>
-                <li className="mob-nav-list btn-signup">sign up</li>
-              </Link>
+              {currentUser && (
+                <li className="nav-list sign-out" onClick={signOutHandler}>
+                  sign out
+                </li>
+              )}
+              {!currentUser && (
+                <Link to="/sign-in" onClick={toggleMenu}>
+                  <li className="mob-nav-list">sign in</li>
+                </Link>
+              )}
+              {!currentUser && (
+                <Link to="/sign-up" onClick={toggleMenu}>
+                  <li className="mob-nav-list btn-signup">sign up</li>
+                </Link>
+              )}
             </ul>
           </div>
         </div>
