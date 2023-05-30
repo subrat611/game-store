@@ -6,6 +6,7 @@ import {
   signOut,
   onAuthStateChanged,
 } from "firebase/auth";
+import { getFirestore, doc, getDoc, setDoc } from "firebase/firestore";
 
 const {
   VITE_FIREBASE_API_KEY,
@@ -50,3 +51,30 @@ export const signOutUser = async () => signOut(auth);
 // observer that keep track of my auth state changes
 export const onAuthStateChangedListener = (listenerCallback) =>
   onAuthStateChanged(auth, listenerCallback);
+
+// firestore
+export const db = getFirestore();
+
+// create specific user document on firestore
+export const createUserDocumentFromAuth = async (userAuth) => {
+  const userDocRef = doc(db, "users", userAuth.uid);
+
+  const userSnapshot = await getDoc(userDocRef);
+
+  // if user data does not exits
+  // create/set the document with the data from userAuth in my collection
+  if (!userSnapshot.exists()) {
+    const { email } = userAuth;
+    const createdAt = new Date();
+
+    try {
+      await setDoc(userDocRef, { email, createdAt });
+    } catch (err) {
+      alert(`Error occur during creating user::: ${err.message}`);
+    }
+  }
+
+  // if user data exits
+  // return userDocRef
+  return userDocRef;
+};
