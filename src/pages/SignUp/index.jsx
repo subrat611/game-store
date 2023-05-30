@@ -2,7 +2,10 @@ import { useContext, useState } from "react";
 
 // import { UserContext } from "../../context/User";
 
-import { createUserWithEmail } from "../../utils/firebase/firebase";
+import {
+  createUserDocumentFromAuth,
+  createUserWithEmail,
+} from "../../utils/firebase/firebase";
 
 import BgImg from "../../assets/desktop-hd-wallpaper.jpg";
 
@@ -47,6 +50,12 @@ export default function SignUp() {
         formFields.emailId,
         formFields.password
       );
+
+      // setup the display name
+      await createUserDocumentFromAuth(user, {
+        displayName: formFields.displayName,
+      });
+
       resetFields();
       // setCurrentUser(user); no longer need because of observer
     } catch (err) {

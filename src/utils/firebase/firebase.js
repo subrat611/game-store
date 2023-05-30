@@ -56,7 +56,12 @@ export const onAuthStateChangedListener = (listenerCallback) =>
 export const db = getFirestore();
 
 // create specific user document on firestore
-export const createUserDocumentFromAuth = async (userAuth) => {
+export const createUserDocumentFromAuth = async (
+  userAuth,
+  additionalInfo = {}
+) => {
+  if (!userAuth) return;
+
   const userDocRef = doc(db, "users", userAuth.uid);
 
   const userSnapshot = await getDoc(userDocRef);
@@ -68,7 +73,7 @@ export const createUserDocumentFromAuth = async (userAuth) => {
     const createdAt = new Date();
 
     try {
-      await setDoc(userDocRef, { email, createdAt });
+      await setDoc(userDocRef, { email, createdAt, ...additionalInfo });
     } catch (err) {
       alert(`Error occur during creating user::: ${err.message}`);
     }
