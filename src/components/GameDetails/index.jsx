@@ -1,5 +1,6 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import { CartContext } from "../../context/Cart";
 import "./gamedetails.scss";
 
 export default function GameDetails() {
@@ -30,6 +31,7 @@ export default function GameDetails() {
 
   return gameDetails ? (
     <GameDetailsData
+      id={id}
       title={gameDetails.title}
       thumbnail={gameDetails.thumbnail}
       desc={gameDetails.description}
@@ -48,6 +50,7 @@ export default function GameDetails() {
 }
 
 function GameDetailsData({
+  id,
   title,
   thumbnail,
   desc,
@@ -59,6 +62,12 @@ function GameDetailsData({
   developer,
   releaseDate,
 }) {
+  const { addItemToCart } = useContext(CartContext);
+
+  const addProductToCart = () => {
+    addItemToCart({ id, title, thumbnail });
+  };
+
   return (
     <div className="game-details-wrapper">
       <div className="game-details-bg">
@@ -123,7 +132,9 @@ function GameDetailsData({
               <p className="info">Release Date: {releaseDate}</p>
             </li>
           </ul>
-          <button className="add-to-cart-btn">Add To Cart</button>
+          <button className="add-to-cart-btn" onClick={addProductToCart}>
+            Add To Cart
+          </button>
         </div>
       </div>
     </div>

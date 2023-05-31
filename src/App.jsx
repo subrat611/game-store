@@ -4,6 +4,7 @@ import Home from "./pages/Home";
 import SignIn from "./pages/SignIn";
 import SignUp from "./pages/SignUp";
 import GameDetails from "./components/GameDetails";
+import CartPage from "./pages/CartPage";
 
 function App() {
   return (
@@ -14,7 +15,7 @@ function App() {
           <Route path="game-details/:id" element={<GameDetails />} />
           <Route path="sign-in" element={<SignIn />} />
           <Route path="sign-up" element={<SignUp />} />
-          <Route path="cart" element={<h1>shop</h1>} />
+          <Route path="cart" element={<CartPage />} />
         </Route>
       </Routes>
     </div>
