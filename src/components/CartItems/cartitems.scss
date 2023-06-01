@@ -21,9 +21,22 @@
       margin-right: 1rem;
     }
 
-    .cart-item-qty {
-      font-size: 1.3rem;
-      font-weight: bold;
+    .cart-qty {
+      display: flex;
+      align-items: center;
+      margin: 0 0 0 0.5rem;
+
+      &-plus,
+      &-minus {
+        font-size: 1.5rem;
+        cursor: pointer;
+      }
+
+      .cart-item-qty {
+        margin: 0 1rem;
+        font-size: 1.3rem;
+        font-weight: bold;
+      }
     }
   }
 
