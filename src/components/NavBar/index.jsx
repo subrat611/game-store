@@ -1,5 +1,6 @@
 import { useContext, useState } from "react";
 import { Link, Outlet } from "react-router-dom";
+import { useSelector } from "react-redux";
 
 import { UserContext } from "../../context/User";
 
@@ -12,8 +13,9 @@ import "./navbar.scss";
 
 export default function NavBar() {
   const [toggleNav, setToggleNav] = useState(false);
+  const currentUser = useSelector((state) => state.user.currentUser);
 
-  const { currentUser } = useContext(UserContext);
+  // const { currentUser } = useContext(UserContext);
 
   const signOutHandler = async () => {
     await signOutUser();
